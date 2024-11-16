@@ -1,0 +1,231 @@
+:root {
+  --primary-color: #7650dc;
+  --primary-color-light: #dacffc;
+
+  --secondary-color: #ffcb6b;
+  --secondary-color-light: #f9eee1;
+
+  --white: #ffffff;
+  --black: #121212;
+
+  --rounded-edges: 0.6rem;
+}
+
+@font-face {
+  font-family: main-font;
+  src: url("assets/fonts/static/DMSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: main-font-lg;
+  src: url("assets/fonts/static/DMSans-Medium.ttf");
+}
+
+@font-face {
+  font-family: main-font-i;
+  src: url("assets/fonts/static/DMSans-MediumItalic.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-weight: 400;
+  line-height: 100%;
+  font-size: 1.11rem;
+  color: var(--black);
+  box-sizing: border-box;
+  font-family: main-font;
+}
+
+body {
+  background-color: #f8f6f4;
+}
+
+main {
+  gap: 1.5rem;
+  margin: auto;
+  display: grid;
+  padding: 1.5rem 5vw;
+  place-items: stretch;
+}
+
+.card {
+  gap: 0.8rem;
+  padding: 5%;
+  display: grid;
+  border-radius: var(--rounded-edges);
+}
+
+.italic {
+  font-family: main-font-i;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: calc(1.125rem + 1vw);
+}
+
+h3 {
+  font-weight: 600;
+  font-size: calc(1.25rem + 1vw);
+}
+
+h4 {
+  font-weight: 600;
+  font-size: calc(2rem + 1vw);
+}
+
+/* main-header styles */
+.main-header-card {
+  gap: 1.5rem;
+  padding-block: 0;
+  background-color: var(--primary-color);
+  grid-template-rows: 0.5rem auto auto 0.5rem;
+}
+
+h1 {
+  grid-row: 2/3;
+  text-align: center;
+  color: var(--white);
+  font-size: calc(2.5rem + 1vw);
+}
+
+h1 .ten-x {
+  font-size: inherit;
+  color: var(--secondary-color);
+}
+
+h1 .italic {
+  font-size: inherit;
+  color: var(--white);
+}
+
+.main-header-card > figure {
+  gap: 0.5rem;
+  display: grid;
+  grid-row: 3/4;
+  place-items: center;
+}
+
+.rating-stars {
+  width: 11.5rem;
+}
+
+.main-header-card figcaption {
+  color: var(--secondary-color-light);
+}
+
+/* multiple-platforms-card styles */
+
+.multiple-platforms-card {
+  background-color: var(--white);
+}
+
+.multiple-platforms-card > img {
+  width: 100%;
+}
+
+/* consistent-schedule-card styles */
+
+.consistent-schedule-card {
+  height: 12.6rem;
+  overflow: hidden;
+  background-color: var(--secondary-color);
+}
+
+.consistent-schedule-card > img {
+  width: 70%;
+}
+
+/* schedule-post-card styles */
+
+.schedule-post-card {
+  justify-items: center;
+  background-color: var(--primary-color-light);
+}
+
+.schedule-post-card img {
+  width: 100%;
+}
+
+.schedule-post-card p {
+  text-align: center;
+}
+
+/* grow-followers-card styles */
+
+.grow-followers-card {
+  gap: 2rem;
+  place-items: center;
+  background-color: var(--primary-color);
+}
+
+.grow-followers-card > img {
+  width: 70%;
+}
+
+.grow-followers-card h3 {
+  width: 70%;
+  text-align: center;
+  font-weight: unset;
+  color: var(--secondary-color-light);
+}
+
+/* audience-growth-card styles */
+
+.audience-growth-card {
+  background-color: var(--white);
+}
+
+.audience-growth-card > img {
+  width: 65%;
+}
+
+/* create-post-card styles */
+
+.create-post-card {
+  background-color: var(--secondary-color-light);
+}
+
+.create-post-card .italic {
+  font-size: inherit;
+  color: var(--black);
+  font-weight: inherit;
+}
+
+.create-post-card .italic {
+  color: var(--primary-color);
+}
+
+.create-post-card > img {
+  width: 70%;
+}
+
+/* ai-content-card styles */
+
+.ai-content-card {
+  background-color: var(--secondary-color);
+}
+
+.ai-content-card > img {
+  width: 75%;
+}
+
+.ai-content-card > h3 {
+  width: 80%;
+}
+
+.attribution {
+  gap: 1rem;
+  padding: 5%;
+  display: grid;
+  place-items: center;
+  background-color: var(--black);
+}
+
+footer.attribution a,
+footer.attribution span {
+  text-decoration: none;
+  color: var(--secondary-color-light);
+}
