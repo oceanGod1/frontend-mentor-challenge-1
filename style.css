@@ -57,13 +57,19 @@ main {
   border-radius: var(--rounded-edges);
 }
 
+.container {
+  gap: 1rem;
+  width: 100%;
+  display: grid;
+}
+
 .italic {
   font-family: main-font-i;
 }
 
 h2 {
   font-weight: 600;
-  font-size: calc(1.125rem + 1vw);
+  font-size: calc(1.125rem + 0.7vw);
 }
 
 h3 {
@@ -73,7 +79,11 @@ h3 {
 
 h4 {
   font-weight: 600;
-  font-size: calc(2rem + 1vw);
+  font-size: calc(2rem + 1.5vw);
+}
+
+p {
+  text-align: center;
 }
 
 /* main-header styles */
@@ -129,12 +139,16 @@ h1 .italic {
 /* consistent-schedule-card styles */
 
 .consistent-schedule-card {
-  height: 12.6rem;
   overflow: hidden;
+  padding-bottom: 0;
   background-color: var(--secondary-color);
 }
 
-.consistent-schedule-card > img {
+.consistent-schedule-card .container {
+  height: 11.5rem;
+}
+
+.consistent-schedule-card img {
   width: 70%;
 }
 
@@ -145,12 +159,11 @@ h1 .italic {
   background-color: var(--primary-color-light);
 }
 
+.schedule-post-card h2 {
+  text-align: center;
+}
 .schedule-post-card img {
   width: 100%;
-}
-
-.schedule-post-card p {
-  text-align: center;
 }
 
 /* grow-followers-card styles */
@@ -178,6 +191,10 @@ h1 .italic {
   background-color: var(--white);
 }
 
+.audience-growth-card p {
+  text-align: left;
+}
+
 .audience-growth-card > img {
   width: 65%;
 }
@@ -198,7 +215,7 @@ h1 .italic {
   color: var(--primary-color);
 }
 
-.create-post-card > img {
+.create-post-card img {
   width: 70%;
 }
 
@@ -208,11 +225,11 @@ h1 .italic {
   background-color: var(--secondary-color);
 }
 
-.ai-content-card > img {
+.ai-content-card img {
   width: 75%;
 }
 
-.ai-content-card > h3 {
+.ai-content-card h3 {
   width: 80%;
 }
 
@@ -228,4 +245,132 @@ footer.attribution a,
 footer.attribution span {
   text-decoration: none;
   color: var(--secondary-color-light);
+}
+
+@media (min-width: 90rem) {
+  main {
+    grid-template-columns: repeat(4, 14rem);
+  }
+
+  .card {
+    padding-inline: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  h1 {
+    margin-block: 1rem;
+  }
+
+  h2,
+  h3,
+  h4 {
+    font-weight: 500;
+  }
+
+  /* create-post-card styles */
+
+  .create-post-card {
+    grid-area: 1/1/6/2;
+  }
+
+  .create-post-card .container {
+    width: 11rem;
+    align-self: center;
+  }
+
+  .create-post-card img {
+    width: 100%;
+  }
+
+  /* main-header styles */
+  .main-header-card {
+    grid-area: 1/2/5/4;
+  }
+
+  /* ai-content-card styles */
+
+  .ai-content-card {
+    grid-area: 6/1/11/2;
+  }
+
+  .ai-content-card .container {
+    width: 11.5rem;
+    align-self: stretch;
+  }
+
+  .ai-content-card img {
+    width: 100%;
+  }
+
+  .ai-content-card h3 {
+    width: 95%;
+  }
+
+  /* schedule-post-card styles */
+  .schedule-post-card {
+    overflow: hidden;
+    grid-area: 1/4/8/5;
+  }
+  .schedule-post-card .container {
+    width: 12rem;
+    align-self: center;
+  }
+
+  .schedule-post-card img {
+    width: 170%;
+  }
+
+  /* multiple-platforms-card styles */
+
+  .multiple-platforms-card {
+    grid-area: 5/2/8/3;
+    overflow: hidden;
+  }
+
+  .multiple-platforms-card img {
+    width: 150%;
+  }
+
+  /* consistent-schedule-card styles */
+
+  .consistent-schedule-card {
+    grid-area: 5/3/8/4;
+  }
+
+  .consistent-schedule-card img {
+    width: 100%;
+  }
+
+  /* audience-growth-card styles */
+
+  .audience-growth-card {
+    grid-area: 8/2/11/3;
+  }
+
+  .audience-growth-card img {
+    width: 90%;
+  }
+
+  /* grow-followers-card styles */
+
+  .grow-followers-card {
+    gap: 0.7rem;
+    padding-block: 0.77rem;
+    grid-area: 8/3/11/5;
+    justify-items: left;
+    grid-template-columns: auto 1fr;
+  }
+
+  .grow-followers-card img {
+    width: 11rem;
+  }
+
+  .grow-followers-card h3 {
+    text-align: start;
+    width: 100%;
+  }
 }
