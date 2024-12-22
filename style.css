@@ -39,7 +39,7 @@
 
 body {
   display: grid;
-  height: 100dvh;
+  height: 100vh;
   place-items: center;
   background-color: #fbfaff;
 }
