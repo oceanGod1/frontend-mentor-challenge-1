@@ -38,13 +38,16 @@
 }
 
 body {
-  background-color: #f8f6f4;
+  display: grid;
+  height: 100dvh;
+  place-items: center;
+  background-color: #fbfaff;
 }
 
 main {
   gap: 1.5rem;
-  margin: auto;
   display: grid;
+  position: relative;
   padding: 1.5rem 5vw;
   place-items: stretch;
 }
@@ -206,11 +209,7 @@ h1 .italic {
 
 .card7 .italic {
   font-size: inherit;
-  color: var(--black);
   font-weight: inherit;
-}
-
-.card7 .italic {
   color: var(--primary-color);
 }
 
@@ -232,59 +231,80 @@ h1 .italic {
   width: 80%;
 }
 
-.attribution {
-  gap: 1rem;
-  padding: 5%;
-  display: grid;
-  place-items: center;
-  background-color: var(--black);
+@media (min-width: 48rem) {
+  body {
+    background-color: #f1effc;
+  }
+  main {
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card1 {
+    grid-column: span 2;
+  }
+  .card4 {
+    grid-row: span 2;
+  }
+  .card6 {
+    grid-area: 4/2/5/3;
+  }
+  .card7 {
+    grid-area: 3/2/4/3;
+  }
 }
 
-footer.attribution a,
-footer.attribution span {
-  text-decoration: none;
-  color: var(--secondary-color-light);
-}
-
-@media (min-width: 90rem) {
+@media (min-width: 69rem) {
   main {
     justify-content: center;
     grid-template:
-      "card7 card1 card1 card4" 1fr
-      "card7 card1 card1 card4" 1fr
-      "card7 card1 card1 card4" 1fr
-      "card7 card1 card1 card4" 1fr
-      "card7 card2 card3 card4" 1fr
-      "card8 card2 card3 card4" 1fr
-      "card8 card2 card3 card4" 1fr
-      "card8 card6 card5 card5" 1fr
-      "card8 card6 card5 card5" 1fr
-      "card8 card6 card5 card5" 1fr/
-      14rem 14rem 14rem 14rem;
+      "card7 card1 card1 card4" 3.5rem
+      "card7 card1 card1 card4" 3.5rem
+      "card7 card1 card1 card4" 3.5rem
+      "card7 card1 card1 card4" 3.5rem
+      "card7 card2 card3 card4" 3.5rem
+      "card8 card2 card3 card4" 3.5rem
+      "card8 card2 card3 card4" 3.5rem
+      "card8 card6 card5 card5" 3.5rem
+      "card8 card6 card5 card5" 3.5rem
+      "card8 card6 card5 card5" 3.5rem /
+      minmax(12rem, 14rem) minmax(12rem, 14rem) minmax(12rem, 14rem) minmax(12rem, 14rem);
   }
 
   .card {
-    padding-inline: 1.5rem;
+    padding: 1.5rem;
   }
 
   p {
     font-size: 1rem;
     text-align: left;
   }
-
   h1 {
-    margin-block: 1rem;
+    font-size: 3.2rem;
   }
 
   h2,
-  h3,
+  h3 {
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
   h4 {
-    font-weight: 500;
+    font-size: 3.5rem;
   }
 
   /* card1 styles */
   .card1 {
+    gap: 0;
+    display: flex;
     grid-area: card1;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 
   /* card2 styles */
@@ -294,7 +314,7 @@ footer.attribution span {
     overflow: hidden;
   }
   .card2 img {
-    width: 150%;
+    width: 155%;
   }
 
   /* card3 styles */
@@ -313,37 +333,52 @@ footer.attribution span {
   }
   .card4 .container {
     width: 12rem;
+    display: flex;
     align-self: center;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .card4 h2 {
+    text-align: start;
   }
   .card4 img {
-    width: 170%;
+    width: 165%;
+    /* height: 17rem; */
+  }
+  .card4 p {
+    width: 90%;
   }
 
   /* card5 styles */
 
   .card5 {
     gap: 0.7rem;
-    padding-block: 0.77rem;
     grid-area: card5;
+    padding-block: 1rem;
     justify-items: left;
     grid-template-columns: auto 1fr;
   }
 
   .card5 img {
-    width: 11rem;
+    width: 11.5rem;
+    height: 11rem;
   }
 
   .card5 h3 {
-    text-align: start;
     width: 100%;
+    text-align: start;
   }
 
   /* card6 styles */
 
   .card6 {
+    gap: 0;
     grid-area: card6;
+    padding-block: 1rem;
   }
-
+  .card6 p {
+    transform: translateY(-0.5rem);
+  }
   .card6 img {
     width: 90%;
   }
@@ -353,8 +388,7 @@ footer.attribution span {
     grid-area: card7;
   }
   .card7 .container {
-    width: 11rem;
-    align-self: center;
+    padding-block: 2rem;
   }
   .card7 img {
     width: 100%;
@@ -365,14 +399,13 @@ footer.attribution span {
   .card8 {
     grid-area: card8;
   }
-
   .card8 .container {
-    width: 11.5rem;
-    align-self: stretch;
+    width: 108%;
+    display: grid;
   }
-
   .card8 img {
     width: 100%;
+    align-self: end;
   }
 
   .card8 h3 {
